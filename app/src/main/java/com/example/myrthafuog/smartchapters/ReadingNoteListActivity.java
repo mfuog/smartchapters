@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class ReadingNoteListActivity extends ListActivity {
@@ -61,7 +62,6 @@ public class ReadingNoteListActivity extends ListActivity {
         String  itemValue    = (String) listView.getItemAtPosition(position);
 
         content.setText("Clicked item " + position + ": " + itemValue);
-        //Toast.makeText(getActivity(), itemValue + " Clicked!"
-        //        , Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), itemValue + " Clicked!", Toast.LENGTH_SHORT).show();
     }
 }

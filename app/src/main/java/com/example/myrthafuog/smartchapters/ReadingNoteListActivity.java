@@ -23,8 +23,6 @@ public class ReadingNoteListActivity extends ListActivity {
         content = (TextView)findViewById(R.id.output);
 
         //listView = (ListView) findViewById(R.id.list);
-        //String[] values = new String[] { "Android Example ListActivity", "Adapter implementation", "Simple List View With ListActivity",
-        //        "ListActivity Android", "Android Example", "ListActivity Source Code", "ListView ListActivity Array Adapter", "Android Example ListActivity" };
 
         ArrayList<ReadingNote> notes = new ArrayList<ReadingNote>();
         Book book = new Book("Alice in Wonderland", 5);
@@ -42,23 +40,6 @@ public class ReadingNoteListActivity extends ListActivity {
 
         // Assign adapter to ListActivity
         setListAdapter(adapter);
-
-        /*setListAdapter(new ArrayAdapter<ReadingNote>(this, android.R.layout.simple_list_item_1, readingNotes){
-
-            @Override
-            public View getView(int position, View convertView, ViewGroup parent) {
-
-                if((convertView == null) || !(convertView instanceof AppointmentListItem)){
-
-                    convertView = new AppointmentListItem(AppointmentListActivity.this, this);
-                }
-
-                ((AppointmentListItem)convertView).setData(getItem(position));
-
-                return convertView;
-            }
-        });*/
-
     }
 
     @Override

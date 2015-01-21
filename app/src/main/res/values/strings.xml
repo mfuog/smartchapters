@@ -11,5 +11,8 @@
     <string name="measurement2">---</string>
     <string name="title_activity_reading_note_list_activity">All Notes</string>
     <string name="title_activity_reading_note_view">Note Details</string>
+    <string name="new_note_button">New note</string>
+    <string name="title_activity_create_reading_note_actvity">CreateReadingNoteActvity</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>

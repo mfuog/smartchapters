@@ -24,6 +24,10 @@
             android:name=".ReadingNoteViewActivity"
             android:label="@string/title_activity_reading_note_view" >
         </activity>
+        <activity
+            android:name=".CreateReadingNoteActvity"
+            android:label="@string/title_activity_create_reading_note_actvity" >
+        </activity>
     </application>
 
 </manifest>

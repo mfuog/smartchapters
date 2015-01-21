@@ -30,7 +30,7 @@
     <Button
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:text="@string/measurement1Button"
+        android:text="@string/measure_without_book_button"
         android:onClick="measureWithoutBook" />
 
     <TextView
@@ -42,23 +42,11 @@
     <Button
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:text="@string/measurement2Button"
+        android:text="@string/measure_with_closed_book_button"
         android:onClick="measureClosedBook" />
 
     <TextView
         android:id="@+id/measurement2"
-        android:text="@string/measurement1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <Button
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="@string/measurement3Button"
-        android:onClick="measureOpenedBook" />
-
-    <TextView
-        android:id="@+id/measurement3"
         android:text="@string/measurement1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

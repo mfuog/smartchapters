@@ -5,11 +5,9 @@
     <string name="greeting">Measuring electromagnetic fields:</string>
     <string name="action_settings">Settings</string>
     <string name="self_destruct">Boom!</string>
-    <string name="measurement1Button">Hold phone away from book</string>
+    <string name="measure_without_book_button">Hold phone away from book</string>
     <string name="measurement1">---</string>
-    <string name="measurement2Button">Place phone above closed book</string>
+    <string name="measure_with_closed_book_button">Place phone above closed book</string>
     <string name="measurement2">---</string>
-    <string name="measurement3Button">Don\'t move phone and open book</string>
-    <string name="measurement3">---</string>
 
 </resources>

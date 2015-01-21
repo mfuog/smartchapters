@@ -117,8 +117,4 @@ public class MainActivity extends Activity implements SensorEventListener {
         measurement2.setText("Measured: " + lastX + " | " + lastY + " | " + lastZ);
     }
 
-    public void measureOpenedBook(View view) {
-        TextView measurement3 = (TextView) findViewById(R.id.measurement3);
-        measurement3.setText("Measured: " + lastX + " | " + lastY + " | " + lastZ);
-    }
 }

@@ -9,5 +9,6 @@
     <string name="measurement1">---</string>
     <string name="measure_with_closed_book_button">Place phone above closed book</string>
     <string name="measurement2">---</string>
+    <string name="title_activity_reading_note_list_activity">Titel der Liste</string>
 
 </resources>

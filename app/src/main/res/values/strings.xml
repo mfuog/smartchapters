@@ -15,5 +15,10 @@
     <string name="title_activity_create_reading_note_actvity">CreateReadingNoteActvity</string>
     <string name="new_note_description">Take a new note here:</string>
     <string name="button_save_new_note">Save Note</string>
+    <string name="button_edit_note">Edit Note</string>
+    <string name="title_activity_reading_note_edit">ReadingNoteEditActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="edit_note_description">Edit your note:</string>
+    <string name="button_save_note">Update Note</string>
 
 </resources>

@@ -28,6 +28,10 @@
             android:name=".ReadingNoteNewActvity"
             android:label="@string/title_activity_create_reading_note_actvity" >
         </activity>
+        <activity
+            android:name=".ReadingNoteEditActivity"
+            android:label="@string/title_activity_reading_note_edit" >
+        </activity>
     </application>
 
 </manifest>

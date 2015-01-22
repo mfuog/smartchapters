@@ -1,6 +1,7 @@
 package com.example.myrthafuog.smartchapters;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,7 +20,7 @@ public class ReadingNoteNewActvity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reading_note_new);
 
-        mEdit   = (EditText)findViewById(R.id.editText_new_note);
+        mEdit = (EditText)findViewById(R.id.edit_new_note);
 
         String bookId = getIntent().getStringExtra("bookId");
         mBook = Book.getBooks().get(bookId);
@@ -55,5 +56,9 @@ public class ReadingNoteNewActvity extends Activity {
         //TODO: take care of chapter/x-axis
 
         Toast.makeText(getApplicationContext(), "Your note " + newNote.getText() + " was saved!", Toast.LENGTH_SHORT).show();
+
+        Intent intent = new Intent(this, ReadingNoteShowActivity.class);
+        intent.putExtra("noteId", newNote.getId());
+        startActivity(intent);
     }
 }

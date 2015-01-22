@@ -76,7 +76,7 @@ public class ReadingNoteListActivity extends ListActivity {
     }
 
     public void newReadingNote(View view) {
-        Intent intent = new Intent(ReadingNoteListActivity. this, ReadingNoteNewActvity.class);
+        Intent intent = new Intent(this, ReadingNoteNewActvity.class);
         intent.putExtra("bookId", mBook.getId());
         startActivity(intent);
     }

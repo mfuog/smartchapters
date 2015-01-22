@@ -13,9 +13,8 @@ import java.util.ArrayList;
 
 public class ReadingNoteListActivity extends ListActivity {
 
-    TextView content;
     private Book mBook;
-    private ArrayList<ReadingNote> mReadingNotes;
+    private final ArrayList<ReadingNote> mReadingNotes = new ArrayList<ReadingNote>();
     private ArrayAdapter<ReadingNote> mAdapter;
 
     @Override
@@ -23,23 +22,19 @@ public class ReadingNoteListActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reading_notes_list);
 
-        content = (TextView)findViewById(R.id.output);
         //listView = (ListView) findViewById(R.id.list);
 
-        mReadingNotes = new ArrayList<ReadingNote>();
-        mBook = new Book("Alice in Wonderland", 5);
-        //TODO: don't predefine the book but let user choose one
-        mReadingNotes.add(new ReadingNote(mBook));
-        mReadingNotes.add(new ReadingNote(mBook));
-        mReadingNotes.add(new ReadingNote(mBook));
+        // Set book that's associated with the list of notes
+        String bookId = getIntent().getStringExtra("bookId");
+        mBook = Book.getBooks().get(bookId);
+
+
+        TextView titleBar = (TextView) findViewById(R.id.book_title_list);
+        titleBar.setText("Book: " + mBook.getTitle() + ", " + mBook.getNumbChapters() + " chapters");
 
         // Define a new Adapter
-        // First parameter - Context
-        // Second parameter - Layout for the row
-        // Third - the Array of data
         mAdapter = new ArrayAdapter<ReadingNote>(this,
                 android.R.layout.simple_list_item_1, mReadingNotes);
-
 
         // Assign mAdapter to ListActivity
         setListAdapter(mAdapter);
@@ -53,8 +48,10 @@ public class ReadingNoteListActivity extends ListActivity {
         // Update List view by replacing mReadingNotes with array of all current ReadingNotes
         ArrayList<ReadingNote> notes =
                 new ArrayList<ReadingNote>(ReadingNote.getReadingNotes().values());
+
         mReadingNotes.clear();
         mReadingNotes.addAll(notes);
+
         mAdapter.notifyDataSetChanged();
     }
 

@@ -2,6 +2,7 @@ package com.example.myrthafuog.smartchapters;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -20,6 +21,7 @@ public class MainActivity extends Activity implements SensorEventListener {
     private long lastUpdate = 0;
     private float lastX, lastY, lastZ;
     private TextView xAxisText, yAxisText, zAxisText;
+    private Book mBook;
 
     protected void onPause() {
         super.onPause();
@@ -44,8 +46,10 @@ public class MainActivity extends Activity implements SensorEventListener {
         yAxisText = (TextView) findViewById(R.id.y_axis);
         zAxisText = (TextView) findViewById(R.id.z_axis);
 
-
-        //TODOgetIntent().getFloatExtra("XAxis", 0.0f);
+        //TODO: don't predefine the book but let user choose one
+        mBook = new Book("Alice in Wonderland", 5);
+        TextView titleBar = (TextView) findViewById(R.id.book_title_main);
+        titleBar.setText("Book: " + mBook.getTitle() + ", " + mBook.getNumbChapters() + " chapters");
     }
 
 
@@ -73,11 +77,6 @@ public class MainActivity extends Activity implements SensorEventListener {
 
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
-
-
-        //TODOfinal Intent startNewActivityIntent = new Intent(MainActivity.this, NotesListActivity.class);
-        //TODOstartNewActivityIntent.getExtras().putFloat("XAxis", 12.4f);
-        //TODOstartActivity(startNewActivityIntent);
 
         Sensor mySensor = sensorEvent.sensor;
 
@@ -107,15 +106,22 @@ public class MainActivity extends Activity implements SensorEventListener {
 
     }
 
-
-    public void measureWithoutBook(View view) {
-        TextView measurement1 = (TextView) findViewById(R.id.measure_without_book);
+    public void measureInitial(View view) {
+        TextView measurement1 = (TextView) findViewById(R.id.result_without_book);
         measurement1.setText("Measured: " + lastX + " | " + lastY + " | " + lastZ);
+        mBook.setXAxisInitial(lastX);
     }
 
     public void measureWithBookClosed(View view) {
         TextView measurement2 = (TextView) findViewById(R.id.measure_with_book_closed);
         measurement2.setText("Measured: " + lastX + " | " + lastY + " | " + lastZ);
+        mBook.setXAxisClosed(lastX);
+    }
+
+    public void continueToReadingNotesList(View view){
+        Intent intent = new Intent(this, ReadingNoteListActivity.class);
+        intent.putExtra("bookId", mBook.getId());
+        startActivity(intent);
     }
 
 }

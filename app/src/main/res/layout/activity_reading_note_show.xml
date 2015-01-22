@@ -16,4 +16,11 @@
         android:text="@string/button_edit_note"
         android:onClick="editReadingNote"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:text="@string/button_delete_note"
+        android:onClick="deleteReadingNote"/>
+
 </LinearLayout>

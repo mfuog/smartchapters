@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class ReadingNoteShowActivity extends Activity {
@@ -53,6 +54,18 @@ public class ReadingNoteShowActivity extends Activity {
     public void editReadingNote(View view){
         Intent intent = new Intent(this, ReadingNoteEditActivity.class);
         intent.putExtra("noteId", mNote.getId());
+        startActivity(intent);
+    }
+
+    public void deleteReadingNote(View view){
+        ReadingNote.getReadingNotes().remove(mNote.getId());
+
+        Toast.makeText(getApplicationContext(),
+                "Your note " + mNote.getText() + " was deleted.",
+                Toast.LENGTH_SHORT).show();
+
+        Intent intent = new Intent(this, ReadingNoteListActivity.class);
+        intent.putExtra("bookId", mNote.getBook().getId()); //TODO: workaround
         startActivity(intent);
     }
 }

@@ -5,7 +5,17 @@
     android:orientation="vertical" >
 
     <TextView
-        android:text="@string/greeting"
+        android:id="@+id/book_title_main"
+        android:background="#758AA7"
+        android:layout_height="wrap_content"
+        android:padding="1px"
+        android:textColor="#ffffff"
+        android:text="Book:"
+        android:layout_width="fill_parent" />
+
+
+    <TextView
+        android:text="@string/magnometer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
@@ -24,27 +34,45 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+
+
+    <TextView
+        android:text="@string/instruction_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
     <Button
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:text="@string/button_measure_without_book"
-        android:onClick="measureWithoutBook" />
+        android:onClick="measureInitial" />
 
     <TextView
-        android:id="@+id/measure_without_book"
+        android:id="@+id/result_without_book"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:text="@string/instruction_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <Button
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:text="@string/button_measure_with_book_closed"
+        android:text="@string/button_measure_with_closed_book"
         android:onClick="measureWithBookClosed" />
 
     <TextView
         android:id="@+id/measure_with_book_closed"
-        android:text="@string/textview_measure_with_book_closed"
+        android:text="@string/result_with_book_closed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/button_continue_to_list"
+        android:onClick="continueToReadingNotesList" />
 
 </LinearLayout>

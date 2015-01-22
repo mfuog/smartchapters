@@ -59,10 +59,13 @@ public class ReadingNoteEditActivity extends Activity {
         String noteText = mEdit.getText().toString();
         mNote.setText(noteText);
 
-        Toast.makeText(getApplicationContext(), "Your note " + mNote.getText() + " was saved!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(),
+                "Your note " + mNote.getText() + " was saved!",
+                Toast.LENGTH_SHORT).show();
 
-        Intent intent = new Intent(this, ReadingNoteShowActivity.class);
-        intent.putExtra("noteId", mNote.getId());
+        Intent intent = new Intent(this, ReadingNoteListActivity.class);
+        intent.putExtra("bookId", mNote.getBook().getId()); //TODO: workaround
         startActivity(intent);
     }
+
 }

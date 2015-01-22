@@ -57,8 +57,8 @@ public class ReadingNoteNewActvity extends Activity {
 
         Toast.makeText(getApplicationContext(), "Your note " + newNote.getText() + " was saved!", Toast.LENGTH_SHORT).show();
 
-        Intent intent = new Intent(this, ReadingNoteShowActivity.class);
-        intent.putExtra("noteId", newNote.getId());
+        Intent intent = new Intent(this, ReadingNoteListActivity.class);
+        intent.putExtra("bookId", mBook.getId()); //TODO: workaround
         startActivity(intent);
     }
 }

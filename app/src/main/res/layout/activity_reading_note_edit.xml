@@ -23,5 +23,4 @@
         android:text="@string/button_save_note"
         android:onClick="saveReadingNote"/>
 
-
 </LinearLayout>

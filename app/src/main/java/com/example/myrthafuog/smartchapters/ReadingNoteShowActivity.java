@@ -2,23 +2,37 @@ package com.example.myrthafuog.smartchapters;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 
-public class CreateReadingNoteActvity extends Activity {
+public class ReadingNoteShowActivity extends Activity {
+    private ReadingNote note;
+    private static final String TAG = ReadingNoteShowActivity.class.getSimpleName();
+
+    TextView content;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_reading_note_actvity);
+        setContentView(R.layout.activity_reading_note_show);
+        Log.d(TAG, "craaaaaaash!");
+
+        String noteId = getIntent().getStringExtra("noteId");
+        this.note = ReadingNote.getReadingNote(noteId);
+        //do stuff w/ note here
+
+        content = (TextView)findViewById(R.id.note_text);
+        content.setText(this.note.getText());
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_create_reading_note_actvity, menu);
+        getMenuInflater().inflate(R.menu.menu_reading_note_view, menu);
         return true;
     }
 

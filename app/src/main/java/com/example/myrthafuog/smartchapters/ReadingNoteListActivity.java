@@ -19,7 +19,7 @@ public class ReadingNoteListActivity extends ListActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_notes);
+        setContentView(R.layout.activity_reading_notes_list);
 
         content = (TextView)findViewById(R.id.output);
 
@@ -47,7 +47,7 @@ public class ReadingNoteListActivity extends ListActivity {
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //Toast.makeText(getApplicationContext(), " Clicked!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(ReadingNoteListActivity.this, CreateReadingNoteActvity.class);
+                Intent intent = new Intent(ReadingNoteListActivity. this, ReadingNoteNewActvity.class);
                 startActivity(intent);
             }
         });
@@ -64,7 +64,7 @@ public class ReadingNoteListActivity extends ListActivity {
         //content.setText("Clicked item " + position + ": " + itemValue);
         //Toast.makeText(getApplicationContext(), itemValue + " Clicked!", Toast.LENGTH_SHORT).show();
 
-        Intent intent = new Intent(this, ReadingNoteViewActivity.class);
+        Intent intent = new Intent(this, ReadingNoteShowActivity.class);
         intent.putExtra("noteId", item.getId());
         startActivity(intent);
     }

@@ -21,11 +21,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ReadingNoteViewActivity"
+            android:name=".ReadingNoteShowActivity"
             android:label="@string/title_activity_reading_note_view" >
         </activity>
         <activity
-            android:name=".CreateReadingNoteActvity"
+            android:name=".ReadingNoteNewActvity"
             android:label="@string/title_activity_create_reading_note_actvity" >
         </activity>
     </application>

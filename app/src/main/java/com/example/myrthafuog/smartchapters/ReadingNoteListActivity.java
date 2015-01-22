@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -42,15 +41,6 @@ public class ReadingNoteListActivity extends ListActivity {
         // Assign adapter to ListActivity
         setListAdapter(adapter);
 
-
-        final Button button = (Button) findViewById(R.id.create_note_button);
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                //Toast.makeText(getApplicationContext(), " Clicked!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(ReadingNoteListActivity. this, ReadingNoteNewActvity.class);
-                startActivity(intent);
-            }
-        });
     }
 
     @Override
@@ -66,6 +56,12 @@ public class ReadingNoteListActivity extends ListActivity {
 
         Intent intent = new Intent(this, ReadingNoteShowActivity.class);
         intent.putExtra("noteId", item.getId());
+        startActivity(intent);
+    }
+
+    public void newReadingNote(View view) {
+        //Toast.makeText(getApplicationContext(), " Clicked!", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(ReadingNoteListActivity. this, ReadingNoteNewActvity.class);
         startActivity(intent);
     }
 }

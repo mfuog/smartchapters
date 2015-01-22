@@ -11,43 +11,39 @@
 
     <TextView
         android:id="@+id/x_axis"
-        android:text="0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/y_axis"
-        android:text="0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/z_axis"
-        android:text="0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <Button
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:text="@string/measure_without_book_button"
+        android:text="@string/button_measure_without_book"
         android:onClick="measureWithoutBook" />
 
     <TextView
-        android:id="@+id/measurement1"
-        android:text="@string/measurement1"
+        android:id="@+id/measure_without_book"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <Button
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:text="@string/measure_with_closed_book_button"
-        android:onClick="measureClosedBook" />
+        android:text="@string/button_measure_with_book_closed"
+        android:onClick="measureWithBookClosed" />
 
     <TextView
-        android:id="@+id/measurement2"
-        android:text="@string/measurement1"
+        android:id="@+id/measure_with_book_closed"
+        android:text="@string/textview_measure_with_book_closed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

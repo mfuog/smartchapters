@@ -107,13 +107,14 @@ public class MainActivity extends Activity implements SensorEventListener {
 
     }
 
+
     public void measureWithoutBook(View view) {
-        TextView measurement1 = (TextView) findViewById(R.id.measurement1);
+        TextView measurement1 = (TextView) findViewById(R.id.measure_without_book);
         measurement1.setText("Measured: " + lastX + " | " + lastY + " | " + lastZ);
     }
 
-    public void measureClosedBook(View view) {
-        TextView measurement2 = (TextView) findViewById(R.id.measurement2);
+    public void measureWithBookClosed(View view) {
+        TextView measurement2 = (TextView) findViewById(R.id.measure_with_book_closed);
         measurement2.setText("Measured: " + lastX + " | " + lastY + " | " + lastZ);
     }
 

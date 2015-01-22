@@ -64,8 +64,6 @@ public class ReadingNoteShowActivity extends Activity {
                 "Your note " + mNote.getText() + " was deleted.",
                 Toast.LENGTH_SHORT).show();
 
-        Intent intent = new Intent(this, ReadingNoteListActivity.class);
-        intent.putExtra("bookId", mNote.getBook().getId()); //TODO: workaround
-        startActivity(intent);
+        finish();
     }
 }

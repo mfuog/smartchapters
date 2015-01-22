@@ -1,7 +1,6 @@
 package com.example.myrthafuog.smartchapters;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -57,8 +56,6 @@ public class ReadingNoteNewActvity extends Activity {
 
         Toast.makeText(getApplicationContext(), "Your note " + newNote.getText() + " was saved!", Toast.LENGTH_SHORT).show();
 
-        Intent intent = new Intent(this, ReadingNoteListActivity.class);
-        intent.putExtra("bookId", mBook.getId()); //TODO: workaround
-        startActivity(intent);
+        finish();
     }
 }

@@ -14,6 +14,9 @@ import java.util.ArrayList;
 public class ReadingNoteListActivity extends ListActivity {
 
     TextView content;
+    private Book mBook;
+    private ArrayList<ReadingNote> mReadingNotes;
+    private ArrayAdapter<ReadingNote> mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,27 +24,40 @@ public class ReadingNoteListActivity extends ListActivity {
         setContentView(R.layout.activity_reading_notes_list);
 
         content = (TextView)findViewById(R.id.output);
-
         //listView = (ListView) findViewById(R.id.list);
 
-        ArrayList<ReadingNote> notes = new ArrayList<ReadingNote>();
-        Book book = new Book("Alice in Wonderland", 5);
-        notes.add(new ReadingNote(book));
-        notes.add(new ReadingNote(book));
-        notes.add(new ReadingNote(book));
+        mReadingNotes = new ArrayList<ReadingNote>();
+        mBook = new Book("Alice in Wonderland", 5);
+        //TODO: don't predefine the book but let user choose one
+        mReadingNotes.add(new ReadingNote(mBook));
+        mReadingNotes.add(new ReadingNote(mBook));
+        mReadingNotes.add(new ReadingNote(mBook));
 
         // Define a new Adapter
         // First parameter - Context
         // Second parameter - Layout for the row
         // Third - the Array of data
-        ArrayAdapter<ReadingNote> adapter = new ArrayAdapter<ReadingNote>(this,
-                android.R.layout.simple_list_item_1, notes);
+        mAdapter = new ArrayAdapter<ReadingNote>(this,
+                android.R.layout.simple_list_item_1, mReadingNotes);
 
 
-        // Assign adapter to ListActivity
-        setListAdapter(adapter);
+        // Assign mAdapter to ListActivity
+        setListAdapter(mAdapter);
 
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        // Update List view by replacing mReadingNotes with array of all current ReadingNotes
+        ArrayList<ReadingNote> notes =
+                new ArrayList<ReadingNote>(ReadingNote.getReadingNotes().values());
+        mReadingNotes.clear();
+        mReadingNotes.addAll(notes);
+        mAdapter.notifyDataSetChanged();
+    }
+
 
     @Override
     protected void onListItemClick(ListView listView, View view, int position, long id) {
@@ -60,8 +76,8 @@ public class ReadingNoteListActivity extends ListActivity {
     }
 
     public void newReadingNote(View view) {
-        //Toast.makeText(getApplicationContext(), " Clicked!", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(ReadingNoteListActivity. this, ReadingNoteNewActvity.class);
+        intent.putExtra("bookId", mBook.getId());
         startActivity(intent);
     }
 }

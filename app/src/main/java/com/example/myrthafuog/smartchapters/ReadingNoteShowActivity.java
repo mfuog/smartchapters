@@ -2,7 +2,6 @@ package com.example.myrthafuog.smartchapters;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -10,7 +9,6 @@ import android.widget.TextView;
 
 public class ReadingNoteShowActivity extends Activity {
     private ReadingNote note;
-    private static final String TAG = ReadingNoteShowActivity.class.getSimpleName();
 
     TextView content;
 
@@ -18,7 +16,6 @@ public class ReadingNoteShowActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reading_note_show);
-        Log.d(TAG, "craaaaaaash!");
 
         String noteId = getIntent().getStringExtra("noteId");
         this.note = ReadingNote.getReadingNote(noteId);

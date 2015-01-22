@@ -5,15 +5,24 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 
 public class ReadingNoteNewActvity extends Activity {
 
+    private EditText mEdit;
+    private Book mBook;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reading_note_new);
+
+        mEdit   = (EditText)findViewById(R.id.editText_new_note);
+
+        String bookId = getIntent().getStringExtra("bookId");
+        mBook = Book.getBooks().get(bookId);
     }
 
 
@@ -40,7 +49,11 @@ public class ReadingNoteNewActvity extends Activity {
     }
 
     public void saveNewReadingNote(View view){
-        Toast.makeText(getApplicationContext(), "Saved!", Toast.LENGTH_SHORT).show();
+        String noteText = mEdit.getText().toString();
+        ReadingNote newNote = new ReadingNote(mBook);
+        newNote.setText(noteText);
+        //TODO: take care of chapter/x-axis
 
+        Toast.makeText(getApplicationContext(), "Your note " + newNote.getText() + " was saved!", Toast.LENGTH_SHORT).show();
     }
 }

@@ -12,8 +12,10 @@ import android.widget.Toast;
 
 public class ReadingNoteShowActivity extends Activity {
 
-    TextView content;
+    TextView mText;
     private ReadingNote mNote;
+    private TextView mXAxis;
+    private TextView mChapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,8 +26,16 @@ public class ReadingNoteShowActivity extends Activity {
         this.mNote = ReadingNote.getReadingNote(noteId);
         //do stuff w/ mNote here
 
-        content = (TextView)findViewById(R.id.note_text);
-        content.setText(this.mNote.getText());
+        mText = (TextView) findViewById(R.id.note_text);
+        mChapter = (TextView) findViewById(R.id.note_chapter);
+        mXAxis = (TextView) findViewById(R.id.note_XAxis);
+
+        mText.setText("Note: " + this.mNote.getText());
+        mChapter.setText("Chapter: " + this.mNote.getChapter());
+        mXAxis.setText(" | Initial: " + mNote.getBook().getXAxisInitial()
+                    + " | Closed: " + mNote.getBook().getXAxisClosed()
+                    + " | Opened: " + mNote.getXAxisOpened());
+
     }
 
 

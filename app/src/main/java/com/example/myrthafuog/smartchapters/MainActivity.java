@@ -47,7 +47,7 @@ public class MainActivity extends Activity implements SensorEventListener {
         zAxisText = (TextView) findViewById(R.id.z_axis);
 
         //TODO: don't predefine the book but let user choose one
-        mBook = new Book("Alice in Wonderland", 5);
+        mBook = new Book("Alice in Wonderland", 4);
         TextView titleBar = (TextView) findViewById(R.id.book_title_main);
         titleBar.setText("Book: " + mBook.getTitle() + ", " + mBook.getNumbChapters() + " chapters");
     }

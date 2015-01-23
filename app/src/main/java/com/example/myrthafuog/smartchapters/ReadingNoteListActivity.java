@@ -25,9 +25,10 @@ public class ReadingNoteListActivity extends ListActivity {
         //listView = (ListView) findViewById(R.id.list);
 
         // Set book that's associated with the list of notes
-        String bookId = getIntent().getStringExtra("bookId");
-        mBook = Book.getBooks().get(bookId);
-
+        if(getIntent().hasExtra("bookId")) {
+            String bookId = getIntent().getStringExtra("bookId");
+            mBook = Book.getBooks().get(bookId);
+        }
 
         TextView titleBar = (TextView) findViewById(R.id.book_title_list);
         titleBar.setText("Book: " + mBook.getTitle() + ", " + mBook.getNumbChapters() + " chapters");
@@ -51,7 +52,6 @@ public class ReadingNoteListActivity extends ListActivity {
 
         mReadingNotes.clear();
         mReadingNotes.addAll(notes);
-
         mAdapter.notifyDataSetChanged();
     }
 
@@ -64,7 +64,7 @@ public class ReadingNoteListActivity extends ListActivity {
         // Value of clicked ListView item
         ReadingNote item    = (ReadingNote) listView.getItemAtPosition(position);
 
-        //content.setText("Clicked item " + position + ": " + itemValue);
+        //mText.setText("Clicked item " + position + ": " + itemValue);
         //Toast.makeText(getApplicationContext(), itemValue + " Clicked!", Toast.LENGTH_SHORT).show();
 
         Intent intent = new Intent(this, ReadingNoteShowActivity.class);
@@ -73,7 +73,7 @@ public class ReadingNoteListActivity extends ListActivity {
     }
 
     public void newReadingNote(View view) {
-        Intent intent = new Intent(this, ReadingNoteNewActvity.class);
+        Intent intent = new Intent(this, ReadingNoteNewActivity.class);
         intent.putExtra("bookId", mBook.getId());
         startActivity(intent);
     }

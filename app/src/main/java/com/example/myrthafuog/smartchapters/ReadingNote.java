@@ -13,6 +13,7 @@ public class ReadingNote {
     private final Book book;
     private String text;
     private float XAxisOpened;
+    private int chapter;
 
     public ReadingNote(Book book){
         this.id = UUID.randomUUID().toString();
@@ -25,17 +26,20 @@ public class ReadingNote {
         return this.text;
     };
 
-    public int getChapter(ReadingNote note){
-        // calculate: (book.XAxisInitial - book.XAxisClosed) / book.numChapters * this.XAxis
-        return 2;
-    }
-
     public static ReadingNote getReadingNote(String id){
         return readingNotes.get(id);
     }
 
     public static HashMap<String, ReadingNote> getReadingNotes() {
         return readingNotes;
+    }
+
+    public int calculateChapter(){
+        // calculate remainingChapters based on retrieved value
+        float perChapter = (this.book.getXAxisClosed() - this.book.getXAxisInitial()) / this.book.getNumbChapters();
+        float remainingChapters = (this.getXAxisOpened() - this.book.getXAxisInitial()) / perChapter;
+        float currentChapter = this.book.getNumbChapters() - remainingChapters;
+        return (int) Math.abs(remainingChapters);
     }
 
     public String getId(){
@@ -60,5 +64,12 @@ public class ReadingNote {
 
     public void setXAxisOpened(float XAxisOpened) {
         this.XAxisOpened = XAxisOpened;
+        this.chapter = calculateChapter();
+    }
+
+    public int getChapter() { return chapter; }
+
+    public void setChapter(int chapter) {
+        this.chapter = chapter;
     }
 }

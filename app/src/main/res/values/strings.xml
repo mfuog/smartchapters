@@ -4,7 +4,7 @@
     <string name="app_name">SmartChapters</string>
     <string name="magnometer">Measuring electromagnetic fields:</string>
     <string name="action_settings">Settings</string>
-    <string name="button_measure_without_book">Save values</string>
+    <string name="button_measure_without_book">Measure</string>
     <string name="result_with_book_closed">---</string>
     <string name="button_continue_to_list">Continue</string>
     <string name="measurement2">---</string>
@@ -16,13 +16,12 @@
     <string name="button_save_new_note">Save Note</string>
     <string name="button_edit_note">Edit Note</string>
     <string name="title_activity_reading_note_edit">ReadingNoteEditActivity</string>
-    <string name="hello_world">Hello world!</string>
     <string name="edit_note_description">Edit your note:</string>
     <string name="button_save_note">Update Note</string>
     <string name="button_delete_note">Delete Note</string>
-    <string name="instruction_1">1. Make sure the book is away from the phone and click \'save values\' below.</string>
-    <string name="instruction_2">2. Place the phone above the closed book so that the measured values are highest and click \'save values\'.</string>
-    <string name="button_measure_with_closed_book">Save values</string>
+    <string name="instruction_1">1. Make sure the book is away from the phone and click \'measure\' below.</string>
+    <string name="instruction_2">2. Place the phone above the closed book so that the measured values are highest and click \'measure\'.</string>
+    <string name="button_measure_with_closed_book">Measure</string>
     <string name="note_title_measurements">(Debug) Measured X values to calculate chapter:</string>
 
 </resources>

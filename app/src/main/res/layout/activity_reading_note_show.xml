@@ -10,11 +10,6 @@
         android:layout_height="wrap_content" />
 
     <TextView
-        android:id="@+id/note_XAxis"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <TextView
         android:id="@+id/note_chapter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
@@ -33,4 +28,24 @@
         android:text="@string/button_delete_note"
         android:onClick="deleteReadingNote"/>
 
+    <TextView
+        android:id="@+id/note_title_measurements"
+        android:text="@string/note_title_measurements"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/note_initial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/note_closed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/note_opened"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 </LinearLayout>

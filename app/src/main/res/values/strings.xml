@@ -23,5 +23,6 @@
     <string name="instruction_1">1. Make sure the book is away from the phone and click \'save values\' below.</string>
     <string name="instruction_2">2. Place the phone above the closed book so that the measured values are highest and click \'save values\'.</string>
     <string name="button_measure_with_closed_book">Save values</string>
+    <string name="note_title_measurements">(Debug) Measured X values to calculate chapter:</string>
 
 </resources>

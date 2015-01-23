@@ -14,8 +14,10 @@ public class ReadingNoteShowActivity extends Activity {
 
     TextView mText;
     private ReadingNote mNote;
-    private TextView mXAxis;
     private TextView mChapter;
+    private TextView mInitialValue;
+    private TextView mClosedValue;
+    private TextView mOpenedValue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,13 +30,17 @@ public class ReadingNoteShowActivity extends Activity {
 
         mText = (TextView) findViewById(R.id.note_text);
         mChapter = (TextView) findViewById(R.id.note_chapter);
-        mXAxis = (TextView) findViewById(R.id.note_XAxis);
+        //debug information:
+        mInitialValue = (TextView) findViewById(R.id.note_initial);
+        mClosedValue = (TextView) findViewById(R.id.note_closed);
+        mOpenedValue = (TextView) findViewById(R.id.note_opened);
 
         mText.setText("Note: " + this.mNote.getText());
         mChapter.setText("Chapter: " + this.mNote.getChapter());
-        mXAxis.setText(" | Initial: " + mNote.getBook().getXAxisInitial()
-                    + " | Closed: " + mNote.getBook().getXAxisClosed()
-                    + " | Opened: " + mNote.getXAxisOpened());
+        //debug information
+        mInitialValue.setText("Initial: " + mNote.getBook().getXAxisInitial());
+        mClosedValue.setText("Closed: " + mNote.getBook().getXAxisClosed());
+        mOpenedValue.setText("Opened: " + mNote.getXAxisOpened());
 
     }
 

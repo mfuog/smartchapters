@@ -39,7 +39,7 @@ public class ReadingNote {
         float perChapter = (this.book.getXAxisClosed() - this.book.getXAxisInitial()) / this.book.getNumbChapters();
         float remainingChapters = (this.getXAxisOpened() - this.book.getXAxisInitial()) / perChapter;
         float currentChapter = this.book.getNumbChapters() - remainingChapters;
-        return (int) Math.abs(remainingChapters);
+        return (int) Math.abs(currentChapter);
     }
 
     public String getId(){
